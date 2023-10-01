@@ -368,7 +368,7 @@ const sendEmail = async (req, res) => {
       </div>
       <div class="email-footer">
         <div class="footer-text">
-          &copy; <a href="https://solution.omega.ac/"  target="_blank">solution.omega.ac</a>
+          &copy; <a href="https://softomation.com/"  target="_blank">softomation.com</a>
         </div>
       </div>
     </div>
@@ -669,7 +669,7 @@ const sendEmail = async (req, res) => {
             <div class="box12">
               <hr>
               <p>${settings.footer}</p>
-              <p>Powered by OMEGA SOLUTION | Contact: 01885 996601</p>
+              <p>Powered by Softomation Technologies | Contact: 0120 4566289, 9999782899</p>
             </div>
       
             <div class="box13">
