@@ -111,7 +111,7 @@ const designation = [
 
 const employmentStatus = [
   { name: "Intern", colourValue: "#00FF00", description: "Intern" },
-  { name: "Permenent", colourValue: "#FF0000", description: "Permenent" },
+  { name: "Permanent", colourValue: "#FF0000", description: "Permanent" },
   { name: "Staff", colourValue: "#FFFF00", description: "Staff" },
   { name: "Terminated", colourValue: "#00FFFF", description: "Terminated" },
 ];
@@ -119,20 +119,20 @@ const employmentStatus = [
 const shifts = [
   {
     name: "Morning",
-    startTime: "1970-01-01T08:00:00.000Z",
-    endTime: "1970-01-01T16:00:00.000Z",
+    startTime: "1970-01-01T10:00:00.000Z",
+    endTime: "1970-01-01T18:00:00.000Z",
     workHour: 8,
   },
   {
     name: "Evening",
-    startTime: "1970-01-01T16:00:00.000Z",
-    endTime: "1970-01-01T00:00:00.000Z",
+    startTime: "1970-01-01T18:00:00.000Z",
+    endTime: "1970-01-01T02:00:00.000Z",
     workHour: 8,
   },
   {
     name: "Night",
-    startTime: "1970-01-01T00:00:00.000Z",
-    endTime: "1970-01-01T08:00:00.000Z",
+    startTime: "1970-01-01T02:00:00.000Z",
+    endTime: "1970-01-01T10:00:00.000Z",
     workHour: 8,
   },
 ];
@@ -157,14 +157,14 @@ const leavePolicy = [
 
 const weeklyHoliday = [
   {
-    name: "Saturday-Thursday",
-    startDay: "Saturday",
-    endDay: "Thursday",
+    name: "Monday-Friday",
+    startDay: "Monday",
+    endDay: "Friday",
   },
   {
-    name: "Sunday-Friday",
-    startDay: "Sunday",
-    endDay: "Friday",
+    name: "Monday-Saturday",
+    startDay: "Monday",
+    endDay: "Saturday",
   },
 ];
 

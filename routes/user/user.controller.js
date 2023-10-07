@@ -58,7 +58,16 @@ const login = async (req, res) => {
 const register = async (req, res) => {
   try {
     const join_date = new Date(req.body.joinDate);
-    const leave_date = new Date(req.body.leaveDate);
+    // const leave_date = new Date(req.body.leaveDate);
+    const leave_date = req.body.leaveDate ? new Date(req.body.leaveDate) : null;
+    const designationEndDate = req.body.designationEndDate
+      ? new Date(req.body.designationEndDate)
+      : null;
+
+    const salaryEndDate = req.body.salaryEndDate
+      ? new Date(req.body.salaryEndDate)
+      : null;
+
 
     const hash = await bcrypt.hash(req.body.password, saltRounds);
     const createUser = await prisma.user.create({
@@ -89,7 +98,8 @@ const register = async (req, res) => {
           create: {
             designationId: req.body.designationId,
             startDate: new Date(req.body.designationStartDate),
-            endDate: new Date(req.body.designationEndDate),
+            // endDate: new Date(req.body.designationEndDate),
+            endDate: designationEndDate,
             comment: req.body.designationComment,
           },
         },
@@ -97,19 +107,24 @@ const register = async (req, res) => {
           create: {
             salary: req.body.salary,
             startDate: new Date(req.body.salaryStartDate),
-            endDate: new Date(req.body.salaryEndDate),
+            // endDate: new Date(req.body.salaryEndDate),
+            endDate: salaryEndDate,
             comment: req.body.salaryComment,
           },
         },
         educations: {
           create: req.body.educations.map((e) => {
+            const studyEndDate = e.studyEndDate
+              ? new Date(e.studyEndDate)
+              : null;
             return {
               degree: e.degree,
               institution: e.institution,
               fieldOfStudy: e.fieldOfStudy,
               result: e.result,
               startDate: new Date(e.studyStartDate),
-              endDate: new Date(e.studyEndDate),
+              // endDate: new Date(e.studyEndDate),
+              endDate: studyEndDate
             };
           }),
         },

@@ -77,7 +77,7 @@ model salaryHistory {
   user      user      @relation(fields: [userId], references: [id])
   userId    Int
   salary    Float
-  startDate String
+  startDate DateTime
   endDate   DateTime?
   comment   String?
   status    Boolean   @default(true)

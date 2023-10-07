@@ -52,7 +52,7 @@ CREATE TABLE "salaryHistory" (
     "id" SERIAL NOT NULL,
     "userId" INTEGER NOT NULL,
     "salary" DOUBLE PRECISION NOT NULL,
-    "startDate" TEXT NOT NULL,
+    "startDate" TIMESTAMP(3) NOT NULL,
     "endDate" TIMESTAMP(3),
     "comment" TEXT,
     "status" BOOLEAN NOT NULL DEFAULT true,
