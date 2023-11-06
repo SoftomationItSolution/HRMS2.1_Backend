@@ -1,7 +1,7 @@
 {
   "name": "hrmosb",
   "version": "1.0.0",
-  "description": "hrm os backend",
+  "description": "hrm 360 backend",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
