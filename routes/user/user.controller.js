@@ -60,12 +60,12 @@ const register = async (req, res) => {
     const join_date = new Date(req.body.joinDate);
     // const leave_date = new Date(req.body.leaveDate);
     const leave_date = req.body.leaveDate ? new Date(req.body.leaveDate) : null;
-    const designationEndDate = req.body.designationEndDate
-      ? new Date(req.body.designationEndDate)
+    const EndDate = req.body.EndDate
+      ? new Date(req.body.EndDate)
       : null;
 
-    const salaryEndDate = req.body.salaryEndDate
-      ? new Date(req.body.salaryEndDate)
+    const endDate = req.body.endDate
+      ? new Date(req.body.endDate)
       : null;
 
 
@@ -97,34 +97,34 @@ const register = async (req, res) => {
         designationHistory: {
           create: {
             designationId: req.body.designationId,
-            startDate: new Date(req.body.designationStartDate),
-            // endDate: new Date(req.body.designationEndDate),
-            endDate: designationEndDate,
+            startDate: new Date(req.body.StartDate),
+            // endDate: new Date(req.body.EndDate),
+            endDate: EndDate,
             comment: req.body.designationComment,
           },
         },
         salaryHistory: {
           create: {
             salary: req.body.salary,
-            startDate: new Date(req.body.salaryStartDate),
-            // endDate: new Date(req.body.salaryEndDate),
-            endDate: salaryEndDate,
+            startDate: new Date(req.body.startDate),
+            // endDate: new Date(req.body.endDate),
+            endDate: endDate,
             comment: req.body.salaryComment,
           },
         },
         educations: {
           create: req.body.educations.map((e) => {
-            const studyEndDate = e.studyEndDate
-              ? new Date(e.studyEndDate)
+            const endDate = e.endDate
+              ? new Date(e.endDate)
               : null;
             return {
               degree: e.degree,
               institution: e.institution,
               fieldOfStudy: e.fieldOfStudy,
               result: e.result,
-              startDate: new Date(e.studyStartDate),
-              // endDate: new Date(e.studyEndDate),
-              endDate: studyEndDate
+              startDate: new Date(e.startDate),
+              // endDate: new Date(e.endDate),
+              endDate: endDate
             };
           }),
         },

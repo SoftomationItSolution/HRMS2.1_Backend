@@ -14,21 +14,29 @@ function getHolidaysInMonth(year, month, startDay, endDay) {
 
   const startDayIndex = dayNameToIndex[startDay];
   const endDayIndex = dayNameToIndex[endDay];
+  // {console.log("monthlyHoliday params in func>> ", year, month, startDay, endDay)}
 
   let holidays = 0;
-
+// commented by amar to calculate holidays other than startDay to endDay
+  // for (let day = 1; day <= daysInMonth; day++) {
+  //   const dayOfWeek = (firstDayOfMonth + day - 1) % 7;
+  //   if (startDayIndex === 0) {
+  //     if (dayOfWeek < startDayIndex || dayOfWeek > endDayIndex) {
+  //       holidays++;
+  //     }
+  //   } else {
+  //     if (dayOfWeek < startDayIndex && dayOfWeek > endDayIndex) {
+  //       holidays++;
+  //     }
+  //   }
+  // }
+  
   for (let day = 1; day <= daysInMonth; day++) {
     const dayOfWeek = (firstDayOfMonth + day - 1) % 7;
-    if (startDayIndex === 0) {
-      if (dayOfWeek < startDayIndex || dayOfWeek > endDayIndex) {
+    if (dayOfWeek < startDayIndex || dayOfWeek > endDayIndex) {
         holidays++;
-      }
-    } else {
-      if (dayOfWeek < startDayIndex && dayOfWeek > endDayIndex) {
-        holidays++;
-      }
     }
-  }
+}
   return holidays;
 }
 

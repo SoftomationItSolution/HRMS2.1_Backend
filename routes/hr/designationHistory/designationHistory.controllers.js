@@ -24,8 +24,8 @@ const createSingleDesignationHistory = async (req, res) => {
         data: {
           userId: req.body.userId,
           designationId: req.body.designationId,
-          startDate: new Date(req.body.designationStartDate),
-          endDate: new Date(req.body.designationEndDate),
+          startDate: new Date(req.body.StartDate),
+          endDate: new Date(req.body.EndDate),
           comment: req.body.designationComment,
         },
       });
@@ -74,8 +74,8 @@ const updateSingleDesignationHistory = async (req, res) => {
       },
       data: {
         designationId: req.body.designationId,
-        startDate: new Date(req.body.designationStartDate),
-        endDate: new Date(req.body.designationEndDate),
+        startDate: new Date(req.body.StartDate),
+        endDate: new Date(req.body.EndDate),
         comment: req.body.designationComment,
       },
     });

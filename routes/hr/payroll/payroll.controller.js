@@ -18,6 +18,7 @@ const generatePayslip = async (req, res) => {
   try {
     const payslip = await prisma.payslip.createMany({
       data: req.body.map((item) => {
+        console.log("Data to API>", item);
         return {
           userId: item.userId,
           salaryMonth: item.salaryMonth,
@@ -32,6 +33,10 @@ const generatePayslip = async (req, res) => {
           monthlyWorkHour: item.monthlyWorkHour,
           hourlySalary: item.hourlySalary,
           workingHour: item.workingHour,
+          totalFullDays: item.totalFullDays,
+          totalHalfDays: item.totalHalfDays,
+          totalAbsents: item.workDay - item.totalFullDays - item.totalHalfDays,
+          perDaySalary: item.perDaySalary,
           salaryPayable: item.salaryPayable,
           bonus: item.bonus,
           bonusComment: item.bonusComment,

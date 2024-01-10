@@ -214,6 +214,10 @@ model payslip {
   workDay           Int
   shiftWiseWorkHour Float
   monthlyWorkHour   Float
+  totalFullDays     Int
+  totalHalfDays     Int
+  totalAbsents      Int
+  perDaySalary      Float
   hourlySalary      Float
   workingHour       Float
   salaryPayable     Float
@@ -448,4 +452,27 @@ model appSetting {
   email        String
   website      String
   footer       String
+}
+
+model officeArea{
+  officeAreaId  Int @id @default(autoincrement())
+  officeId      Int
+  lat1          Float
+  long1         Float
+  lat2          Float
+  long2         Float
+  status        Boolean
+  created_at    DateTime   @default(now())
+  updated_at    DateTime   @updatedAt
+
+}
+
+model userDevice{
+  userDeviceId  Int @id @default(autoincrement())
+  userId        Int
+  IMEI1         String
+  IMEI2         String
+  status        Boolean
+  created_at    DateTime   @default(now())
+  updated_at    DateTime   @updatedAt
 }

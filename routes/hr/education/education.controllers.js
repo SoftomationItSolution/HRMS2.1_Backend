@@ -21,8 +21,8 @@ const createSingleEducation = async (req, res) => {
             institution: education.institution,
             fieldOfStudy: education.fieldOfStudy,
             result: education.result,
-            startDate: new Date(education.studyStartDate),
-            endDate: new Date(education.studyEndDate),
+            startDate: new Date(education.startDate),
+            endDate: new Date(education.endDate),
           };
         }),
       });
@@ -35,8 +35,8 @@ const createSingleEducation = async (req, res) => {
           institution: req.body.institution,
           fieldOfStudy: req.body.fieldOfStudy,
           result: req.body.result,
-          startDate: new Date(req.body.studyStartDate),
-          endDate: new Date(req.body.studyEndDate),
+          startDate: new Date(req.body.startDate),
+          endDate: new Date(req.body.endDate),
         },
       });
       return res.status(201).json(createdEducation);
@@ -140,8 +140,8 @@ const updateSingleEducation = async (req, res) => {
           institution: req.body.institution,
           fieldOfStudy: req.body.fieldOfStudy,
           result: req.body.result,
-          startDate: new Date(req.body.studyStartDate),
-          endDate: new Date(req.body.studyEndDate),
+          startDate: new Date(req.body.startDate),
+          endDate: new Date(req.body.endDate),
         },
       });
       return res.status(200).json(updatedEducation);
